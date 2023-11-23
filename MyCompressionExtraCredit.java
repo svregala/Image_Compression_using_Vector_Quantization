@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.image.*;
 import java.io.*;
 import java.lang.reflect.Array;
+import java.security.SecureRandom;
 import java.util.*;
 import javax.swing.*;
 
@@ -85,7 +86,7 @@ public class MyCompressionExtraCredit {
       K-Means algorithm: use of centroids
       */
       HashSet<int[][]> ind_record = new HashSet<>();
-      Random random = new Random();
+      Random random = new SecureRandom();
       while(centroid_array.size()<num_vect_N){
          int[][] rand_centroid = new int[vect_size_M][vect_size_M];
          int random_index = random.nextInt(vector_representation.size());
@@ -364,7 +365,7 @@ public class MyCompressionExtraCredit {
             int found=0;
 
             while(found==0){
-               Random random = new Random();
+               Random random = new SecureRandom();
                int[][] random_centroid = new int[vect_size_M][vect_size_M];
                for(int i=0; i<vect_size_M; i++){
                   for(int j=0; j<vect_size_M; j++){
