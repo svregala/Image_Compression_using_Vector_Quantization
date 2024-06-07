@@ -8,6 +8,7 @@ CSCI 576 Homework 2: Image Compression
 import java.awt.*;
 import java.awt.image.*;
 import java.io.*;
+import java.security.SecureRandom;
 import java.util.*;
 import javax.swing.*;
 
@@ -80,7 +81,7 @@ public class MyCompression {
 		*/
 		ArrayList<Point> centroid_array = new ArrayList<>();
 		HashSet<Integer> ind_record = new HashSet<>();
-		Random random = new Random();
+		Random random = new SecureRandom();
 		while(centroid_array.size()<num_vect_N){
 			//int index_to_add = random.nextInt(vector_space_size);
 			int index_to_add = random.nextInt(vector_representation.size());
@@ -338,7 +339,7 @@ public class MyCompression {
 				int found=0;
 
 				while(found==0){
-					Random random = new Random();
+					Random random = new SecureRandom();
 					int index_to_add = random.nextInt(vector_space_size);
 					Point possible_point = possible_2pixel_vectors.get(index_to_add);
 					if(!existing_centroids.contains(possible_point)){
